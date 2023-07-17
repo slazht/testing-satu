@@ -28,8 +28,8 @@ app.get("/products", async (req, res) => {
   res.status(response.status).send(response.data)
 })
 
-app.post("/products", async (req, res) => {
-  const response = await client.service("products").create(req.body)
+app.post("/gcm", async (req, res) => {
+  const response = await client.service("userdata").create(req.body)
   
   if(response.error) {
     if (response.error.message === "project not found") {
